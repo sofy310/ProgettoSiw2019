@@ -1,0 +1,30 @@
+h1{
+	text-align: center;
+	color: purple;
+	margin: 30px 0 50px;
+	font-size: 50;
+
+	}
+
+.links{
+	text-align: center;
+	color: black;
+	margin: 40px 0 50px;
+  	word-spacing: 15px; 
+	font-size: 20;
+
+}
+
+.loginFunzionario{
+	text-align: center;
+	color: #2F2F2F;
+	margin: 5px 0 5px;
+	text-align: right;
+	font-size: 20;
+}
+
+body{
+	background-color: thistle;
+}
+
+
