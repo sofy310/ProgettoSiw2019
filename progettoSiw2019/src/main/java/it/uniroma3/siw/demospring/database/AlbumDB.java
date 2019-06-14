@@ -6,11 +6,16 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import it.uniroma3.siw.demospring.model.Album;
+import it.uniroma3.siw.demospring.model.Fotografo;
 import it.uniroma3.siw.demospring.repository.AlbumRepository;
+import it.uniroma3.siw.demospring.repository.FotografoRepository;
 
 @Component
 public class AlbumDB implements ApplicationRunner{
 
+	@Autowired
+	private FotografoRepository fotografoRepository;
+		
 	@Autowired
 	private AlbumRepository albumRepository;
 
@@ -26,13 +31,20 @@ public class AlbumDB implements ApplicationRunner{
 	}
 	
 	private void addAll() {
-		System.out.print("Aggiungo album");
-		Album a1 = new Album();
-		Album a2 = new Album();
-		Album a3 = new Album();
-		albumRepository.save(a1);
-		albumRepository.save(a2);
-		albumRepository.save(a3);
+
+		Album a1 = new Album("Lapponia");
+		Album a2 = new Album("Scozia");
+		Album a3 = new Album("Italia");
+		Album a4 = new Album("Spagna");
+		Album a5 = new Album("Olanda");
+
+		this.albumRepository.save(a1);
+		this.albumRepository.save(a2);
+		this.albumRepository.save(a3);
+		this.albumRepository.save(a4);
+		this.albumRepository.save(a5);
+
+
 
 	}
 

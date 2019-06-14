@@ -27,12 +27,10 @@ public class Fotografia {
 	@ManyToOne
 	private Fotografo fotografo;
 
-	public Fotografia(String nome, String descrizione, LocalDate data, Album album, Fotografo fotografo) {
+	public Fotografia(String nome, String descrizione) {
 		this.nome = nome;
 		this.descrizione = descrizione;
-		this.data = data;
-		this.album = album;
-		this.fotografo = fotografo;
+
 	}
 	
 	public Fotografia() {
