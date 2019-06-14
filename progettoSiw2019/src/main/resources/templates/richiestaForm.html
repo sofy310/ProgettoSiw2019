@@ -1,39 +1,35 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.tyhmeleaf.org"
+<html xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
-<head>
-<meta charset="ISO-8859-1">
-<title>RichiestaForm</title>
-</head>
+	
 <body>
-	<h1>Compila la Richiesta</h1>
-	<form th:action = "@{/richiesta}" method = "POST" th:object = "${richiesta}">
-		<table>
+<form th:action = "@{/richiesta}" method = "POST" th:object = "${richiesta}">
+	<h1>Compila la richiesta</h1>
+	<div>
+		<h4>Inserisci i tuoi dati</h4>
+	</div>
+	<table>
 		<tr>
 			<td>Nome: </td>
-			<td><input type = "text" th:field = "*{richiesta.cliente.nome}"/></td>
-			<td th:if="${#fields.hasErrors('richiesta.cliente.nome')}" th:errors="*{nome}"></td>					
+			<td><input type = "text" th:field = "*{cliente.nome}"/></td>
 		</tr>
 		<tr>
 			<td>Cognome: </td>
-			<td><input type = "text" th:field = "*{richiesta.cliente.cognome}"/></td>
-			<td th:if="${#fields.hasErrors('richiesta.cliente.cognome')}" th:errors="*{cognome}"></td>					
+			<td><input type = "text" th:field = "*{cliente.cognome}"/></td>
 		</tr>
 		<tr>
-			<td>Email: </td>
-			<td><input type = "text" th:field = "*{richiesta.cliente.email}"/></td>
-			<td th:if="${#fields.hasErrors('richiesta.cliente.email')}" th:errors="*{email}"></td>		
+			<td>e-mail: </td>
+			<td><input type = "text" th:field = "*{cliente.email}"/></td>
 		</tr>
 		<tr>
-			<td>Indirizzo di Consegna: </td>
-			<td><input type = "text" th:field = "*{richiesta.cliente.indirizzo}"/></td>
-			<td th:if="${#fields.hasErrors('richiesta.cliente.indirizzo')}" th:errors="*{indirizzo}"></td>					
-		</tr>
-
+			<td>Indirizzo: </td>
+			<td><input type = "text" th:field = "*{cliente.indirizzo}"/></td>
+		</tr>	
 		<tr>
 			<td><button type = "submit">Invio</button></td>
-		</tr>						
-		</table>
-	</form>
+		</tr>
+		
+	</table>
+</form>
 </body>
 </html>

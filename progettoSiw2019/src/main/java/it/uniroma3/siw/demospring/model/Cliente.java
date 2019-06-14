@@ -15,6 +15,10 @@ public class Cliente {
 	private String nome;
 	
 	private String cognome;
+	
+	private String email;
+	
+	private String indirizzo;
 
 	public Cliente(String nome, String cognome) {
 		super();
@@ -49,5 +53,23 @@ public class Cliente {
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getIndirizzo() {
+		return indirizzo;
+	}
+
+	public void setIndirizzo(String indirizzo) {
+		this.indirizzo = indirizzo;
+	}
+	
+	
 
 }

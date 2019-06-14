@@ -28,9 +28,7 @@ public class Richiesta {
 	@ManyToMany
 	private List<Fotografia> fotografie;
 
-
-
-
+	
 	public Richiesta(Cliente cliente, List<Fotografia> fotografie) {
 		this.data=LocalDate.now();
 		this.cliente = cliente;
