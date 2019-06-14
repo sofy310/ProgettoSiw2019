@@ -1,5 +1,12 @@
+<!DOCTYPE HTML>
+<!--
+	Snapshot by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
+<head>
 
 <title> Benvenuto </title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
@@ -7,24 +14,12 @@
     <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
     </script>
 </head>
+
 <body>
-
 <h1> Benvenuto</h1>
-
 <div class="links">
-
-<a href = "galleriaFoto.html">Galleria_Foto</a>
-
-<a href = "listaFotografi.html">Fotografi</a>
-
-<a href = "listaAlbum.html">Album</a>
-
-</div>
-
-<div class="loginFunzionario">
-<p>
-Sei un funzionario? Effettua il <a href = "LoginFunzionario.html">Login</a>!
-</p>
+<a th:href = "@{/galleriaFoto.html}"
+	th:text = "GalleriaFoto"></a>
 </div>
 </body>
 </html>
