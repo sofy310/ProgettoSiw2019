@@ -3,7 +3,7 @@
 <head>
 <title> Galleria Foto </title>
 
-	<link rel="stylesheet" type="text/css" href="css/galleriaFoto.css">
+	<link rel="stylesheet" type="text/css" href="css/galleriaFoto.css"/>
     <link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
     <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
     </script>
@@ -12,7 +12,15 @@
 <h1> Galleria Foto </h1>
 	<div class="galleria">
 		<a href="/images/galleria/foto1.jpg" data-lightbox="mygallery" data-title = "Lapland, Napapijri" >
-		<img src="/static/images/galleria/foto1.jpg" th:src="@{/images/galleria/foto1.jpg}"/><a>
+		<img src="/static/images/galleria/foto1.jpg" th:src="@{/images/galleria/foto1.jpg}"/></a>
+		<a href="images/galleria/foto2.jpg" data-lightbox="mygallery" data-title = "Lapland, Napapijri">
+		<img src="/static/images/galleria/foto2.jpg" th:src="@{/images/galleria/foto2.jpg}"/></a>
+	   <a href="/images/galleria/foto3.jpg" data-lightbox="mygallery" data-title = "Scotland, Edinburgh">
+	   <img src="/static/images/galleria/foto3.jpg" th:src="@{/images/galleria/foto3.jpg}"/></a>
+	   <a href="/images/galleria/foto5.JPG" data-lightbox="mygallery" data-title = "Spain, Barcelona">
+	   <img src="/static/images/galleria/foto5.jpg" th:src="@{/images/galleria/foto5.jpg}"/></a>
+	   <a href="/images/galleria/foto6.jpg" data-lightbox="mygallery" data-title = "Holland, Zaanse Schans">
+	   <img src="/static/images/galleria/foto6.jpg" th:src="@{/images/galleria/foto6.jpg}"></a>
 	</div>
 </body>
 </html>
