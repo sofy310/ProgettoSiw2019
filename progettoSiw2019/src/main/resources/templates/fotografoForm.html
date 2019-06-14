@@ -17,6 +17,10 @@
 			<td th:if = "${#fields.hasErrors('cognome')}" th:errors = "*{cognome}"></td>
 		</tr>
 		<tr>
+			<td>Anno di nascita: </td>
+			<td><input type = "text" th:field = "*{annoDiNascita}"/></td>
+		</tr>		
+		<tr>
 			<td><button type = "submit">Invio</button></td>
 		</tr>
 	</table>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<body>
+<h1>Fotografi</h1>
+<div>
+<ul>
+	<li th:each = "fotografo : ${fotografi}">
+		<div>
+		<a th:href = "@{/getGalleria}"
+				th:text = "*{fotografo.nome}"></a>
+		<a th:href = "fotografie"
+				th:text = "*{fotografo.cognome}"></a>		
+		</div>
+	</li>
+</ul>
+</div>
+</body>
+</html>
