@@ -18,6 +18,9 @@ public class Richiesta {
 	private long id;
 	
 	private LocalDate data;
+	
+	private int numeroDiFoto;
+
 
 	@OneToOne
 	private Cliente cliente;
@@ -25,16 +28,18 @@ public class Richiesta {
 	@ManyToMany
 	private List<Fotografia> fotografie;
 
-	private int numeroDiFoto;
 
-	public Richiesta() {
-	}
+
 
 	public Richiesta(Cliente cliente, List<Fotografia> fotografie) {
 		this.data=LocalDate.now();
 		this.cliente = cliente;
 		this.fotografie = fotografie;
 		this.numeroDiFoto = fotografie.size();
+	}
+	
+	public Richiesta() {
+		
 	}
 
 	public long getId() {
@@ -53,6 +58,14 @@ public class Richiesta {
 		this.data = data;
 	}
 
+	public int getNumeroDiFoto() {
+		return numeroDiFoto;
+	}
+
+	public void setNumeroDiFoto(int numeroDiFoto) {
+		this.numeroDiFoto = numeroDiFoto;
+	}
+
 	public Cliente getCliente() {
 		return cliente;
 	}
@@ -68,13 +81,8 @@ public class Richiesta {
 	public void setFotografie(List<Fotografia> fotografie) {
 		this.fotografie = fotografie;
 	}
-
-	public int getNumeroDiFoto() {
-		return numeroDiFoto;
-	}
-
-	public void setNumeroDiFoto(int numeroDiFoto) {
-		this.numeroDiFoto = numeroDiFoto;
-	}
-
+	
+	
 }
+
+	

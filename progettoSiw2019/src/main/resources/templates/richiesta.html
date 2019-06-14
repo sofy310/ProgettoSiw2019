@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.tyhmeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="ISO-8859-1">
+<title>Richiesta</title>
+</head>
+<body>
+	<h1>Riepilogo richiesta inviata:</h1>
+	<div>
+		Nome: <span th:txt="${richiesta.nome}">Giovanni</span>
+	</div>
+	<div>
+		Cognome : <span th:txt="${richiesta.cognome}">Bianchi</span>
+	</div>
+	<div>
+		Email: <span th:txt="${richiesta.email}">email@gmail.com</span>
+	</div>
+	<div>
+		Indirizzo di consegna: <span th:txt="${richiesta.indirizzo}">via Macchia Palocco</span>
+	</div>
+</body>
+</html>
