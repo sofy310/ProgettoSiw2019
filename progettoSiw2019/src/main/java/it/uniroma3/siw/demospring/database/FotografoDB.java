@@ -27,9 +27,9 @@ public class FotografoDB implements ApplicationRunner{
 	
 	private void addAll() {
 		System.out.print("Aggiungo fotografo");
-		Fotografo p1 = new Fotografo();
-		Fotografo p2 = new Fotografo();
-		Fotografo p3 = new Fotografo();
+		Fotografo p1 = new Fotografo("Mario", "Rossi", 1990);
+		Fotografo p2 = new Fotografo("Giovanni", "Bianchi", 1996);
+		Fotografo p3 = new Fotografo("Livia", "Verdi", 1982);
 		fotografoRepository.save(p1);
 		fotografoRepository.save(p2);
 		fotografoRepository.save(p3);

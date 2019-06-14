@@ -27,14 +27,10 @@ public class Fotografo {
 	@OneToMany(mappedBy = "fotografo")
 	private List<Album> album;
 
-	public Fotografo(Long id, String nome, String cognome, int annoDiNascita, List<Fotografia> fotografie,
-			List<Album> album) {
-		this.id = id;
+	public Fotografo(String nome, String cognome, int annoDiNascita) {
 		this.nome = nome;
 		this.cognome = cognome;
 		this.annoDiNascita = annoDiNascita;
-		this.fotografie = fotografie;
-		this.album = album;
 	}
 	
 	public Fotografo() {
