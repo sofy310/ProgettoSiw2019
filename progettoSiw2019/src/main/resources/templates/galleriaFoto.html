@@ -1,1 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title> Galleria Foto </title>
 
+	<link rel="stylesheet" type="text/css" href="css/galleriaFoto.css">
+    <link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
+    <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
+    </script>
+</head>
+<body>
+<h1> Galleria Foto </h1>
+	<div class="galleria">
+		<a href="/images/galleria/foto1.jpg" data-lightbox="mygallery" data-title = "Lapland, Napapijri" >
+		<img src="/static/images/galleria/foto1.jpg" th:src="@{/images/galleria/foto1.jpg}"/><a>
+	</div>
+</body>
+</html>

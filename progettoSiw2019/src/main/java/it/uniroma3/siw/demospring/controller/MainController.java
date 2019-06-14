@@ -1,7 +1,6 @@
 package it.uniroma3.siw.demospring.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -13,6 +12,9 @@ public class MainController {
 		return "index.html"; 
 	}
 	
-	@RequestMapping(value="/galleriaFoto", method=RequestMethod)
+	@RequestMapping(value="/getGalleria")
+	public String getGalleria() {
+		return "galleriaFoto";
+	}
 
 }

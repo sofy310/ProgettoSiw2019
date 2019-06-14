@@ -1,25 +1,17 @@
 <!DOCTYPE HTML>
-<!--
-	Snapshot by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
-<head>
-
-<title> Benvenuto </title>
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<head>
+		<title>SILPH SPA</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
     <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
     </script>
-</head>
-
-<body>
-<h1> Benvenuto</h1>
-<div class="links">
-<a th:href = "@{/galleriaFoto.html}"
-	th:text = "GalleriaFoto"></a>
-</div>
-</body>
+	</head>
+	<body><h1> Benvenuto alla SILPH SPA</h1>
+	<div class="links"><div>
+			<a th:href="@{/getGalleria}">GalleriaFoto</a>
+		</div>
+	</div>
+	</body>
 </html>
