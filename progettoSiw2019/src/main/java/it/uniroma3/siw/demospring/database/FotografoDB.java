@@ -1,5 +1,41 @@
 package it.uniroma3.siw.demospring.database;
 
-public class FotografoDB {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.stereotype.Component;
 
+import it.uniroma3.siw.demospring.model.Fotografo;
+import it.uniroma3.siw.demospring.repository.FotografoRepository;
+
+@Component
+public class FotografoDB implements ApplicationRunner{
+
+	@Autowired
+	private FotografoRepository fotografoRepository;
+
+	@Override
+	public void run(ApplicationArguments args) throws Exception {
+		this.deleteAll();
+		this.addAll();
+	}
+	
+	private void deleteAll() {
+		System.out.print("Cancello tutto");
+		fotografoRepository.deleteAll();
+	}
+	
+	private void addAll() {
+		System.out.print("Aggiungo fotografo");
+		Fotografo p1 = new Fotografo();
+		Fotografo p2 = new Fotografo();
+		Fotografo p3 = new Fotografo();
+		fotografoRepository.save(p1);
+		fotografoRepository.save(p2);
+		fotografoRepository.save(p3);
+
+	}
+
+	
+	
 }

@@ -24,10 +24,9 @@ public class Album {
 	@ManyToOne
 	private Fotografo fotografo;
 
-	public Album(Long id, String nome, List<Fotografia> fotografie, Fotografo fotografo) {
+	public Album(Long id, String nome, Fotografo fotografo) {
 		this.id = id;
 		this.nome = nome;
-		this.fotografie = fotografie;
 		this.fotografo = fotografo;
 	}
 	
