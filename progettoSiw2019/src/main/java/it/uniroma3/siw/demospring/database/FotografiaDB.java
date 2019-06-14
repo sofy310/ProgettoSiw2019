@@ -1,7 +1,5 @@
 package it.uniroma3.siw.demospring.database;
 
-import java.time.LocalDate;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -9,17 +7,9 @@ import org.springframework.stereotype.Component;
 
 import it.uniroma3.siw.demospring.model.Fotografia;
 import it.uniroma3.siw.demospring.repository.FotografiaRepository;
-import it.uniroma3.siw.demospring.services.AlbumService;
-import it.uniroma3.siw.demospring.services.FotografoService;
 
 @Component
 public class FotografiaDB implements ApplicationRunner{
-
-	@Autowired
-	private FotografoService fotografoService;
-	
-	@Autowired
-	private AlbumService albumService;
 	
 	@Autowired
 	private FotografiaRepository fotografiaRepository;
