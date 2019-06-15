@@ -1,9 +1,13 @@
 package it.uniroma3.siw.demospring.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Cliente {
@@ -19,6 +23,10 @@ public class Cliente {
 	private String email;
 	
 	private String indirizzo;
+	
+	@OneToMany
+	@JoinColumn(name = "cliente")
+	private List<Fotografia> carrello;
 
 	public Cliente(String nome, String cognome) {
 		super();
@@ -68,6 +76,14 @@ public class Cliente {
 
 	public void setIndirizzo(String indirizzo) {
 		this.indirizzo = indirizzo;
+	}
+
+	public List<Fotografia> getCarrello() {
+		return carrello;
+	}
+
+	public void setCarrello(List<Fotografia> carrello) {
+		this.carrello = carrello;
 	}
 	
 	

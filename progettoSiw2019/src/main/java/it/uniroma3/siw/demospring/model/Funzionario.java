@@ -1,9 +1,13 @@
 package it.uniroma3.siw.demospring.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Funzionario {
@@ -19,6 +23,10 @@ public class Funzionario {
 	private String userName;
 	
 	private String password;
+	
+	@OneToMany
+	@JoinColumn(name = "funzionario")
+	private List<Cliente> richiesteClienti;
 
 	public Funzionario(String nome, String cognome, String userName, String password) {
 		super();
@@ -72,4 +80,13 @@ public class Funzionario {
 		this.password = password;
 	}
 
+	public List<Cliente> getRichiesteClienti() {
+		return richiesteClienti;
+	}
+
+	public void setRichiesteClienti(List<Cliente> richiesteClienti) {
+		this.richiesteClienti = richiesteClienti;
+	}
+
+	
 }
