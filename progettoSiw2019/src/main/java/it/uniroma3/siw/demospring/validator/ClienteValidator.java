@@ -5,15 +5,15 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import it.uniroma3.siw.demospring.model.Richiesta;
+import it.uniroma3.siw.demospring.model.Cliente;
 
 
 @Component 
-public class RichiestaValidator implements Validator{
+public class ClienteValidator implements Validator{
 
 	@Override
 	public boolean supports(Class<?> aClass) {
-		return Richiesta.class.equals(aClass);
+		return Cliente.class.equals(aClass);
 	}
 
 	@Override

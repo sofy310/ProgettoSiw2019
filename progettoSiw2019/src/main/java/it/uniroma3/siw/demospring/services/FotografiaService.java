@@ -30,4 +30,5 @@ public class FotografiaService {
 	public Fotografia fotografiaPerId(Long id) {
 		return this.fotografiaRepository.findById(id).get();
 	}
+	
 }

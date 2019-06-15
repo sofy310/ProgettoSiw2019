@@ -10,37 +10,39 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import it.uniroma3.siw.demospring.model.Richiesta;
-import it.uniroma3.siw.demospring.services.RichiestaService;
-import it.uniroma3.siw.demospring.validator.RichiestaValidator;
+import it.uniroma3.siw.demospring.model.Cliente;
+import it.uniroma3.siw.demospring.services.ClienteService;
+import it.uniroma3.siw.demospring.validator.ClienteValidator;
 
 @Controller
-public class RichiestaController {
+public class ClienteController {
 
 	@Autowired
-	RichiestaService richiestaService;
+	ClienteService clienteService;
 	
 	@Autowired
-	RichiestaValidator richiestaValidator;
+	ClienteValidator clienteValidator;
 	
 	@RequestMapping("/addRichiesta")
-	public String addRichiesta(Model model) {
-		model.addAttribute("richiesta", new Richiesta());
+	public String addCliente(Model model) {
+		model.addAttribute("cliente", new Cliente());
 		return "richiestaForm";
 		
 	}
 	
 	@RequestMapping(value = "/richiesta", method = RequestMethod.POST)
-	public String newRichiesta(@Valid @ModelAttribute Richiesta richiesta, 
+	public String newFotografo(@Valid @ModelAttribute Cliente cliente, 
 			Model model, BindingResult bindingResult) {
-		this.richiestaValidator.validate(richiesta, bindingResult);
+		this.clienteValidator.validate(cliente, bindingResult);
 		if(!bindingResult.hasErrors()) {
-			this.richiestaService.inserisci(richiesta);
-			model.addAttribute("richiesta", richiesta);
+			this.clienteService.inserisci(cliente);
+			model.addAttribute("cliente", cliente);
 			return "richiesta";
 		}
 		else {
 			return "richiestaForm";
 		}
 	}
+	
+	
 }

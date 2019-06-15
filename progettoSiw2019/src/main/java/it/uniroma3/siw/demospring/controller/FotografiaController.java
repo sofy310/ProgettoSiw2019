@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import it.uniroma3.siw.demospring.model.Fotografia;
+import it.uniroma3.siw.demospring.services.CarrelloService;
 import it.uniroma3.siw.demospring.services.FotografiaService;
 import it.uniroma3.siw.demospring.validator.FotografiaValidator;
 
@@ -19,6 +20,9 @@ public class FotografiaController {
 
 	@Autowired
 	FotografiaService fotografiaService;
+	
+	@Autowired
+	CarrelloService carrelloService;
 	
 	@Autowired
 	FotografiaValidator fotografiaValidator;
@@ -43,8 +47,15 @@ public class FotografiaController {
 		}
 	}
 	
-	@RequestMapping(value = "/fotografie", method = RequestMethod.GET)
-	public String listaDiFotografie(Model model) {
-		return "fotografie";
+	@RequestMapping("/addFotografiaNelCarrello")
+	public String addFotografiaNelCarrello(Model model, Fotografia fotografia) {
+		model.addAttribute("fotografia", this.carrelloService.inserisciNelCarrello(fotografia));
+		return "galleriaFoto";
+	}
+	
+	@RequestMapping(value = "/carrello")
+	public String carrello(@ModelAttribute Fotografia fotografia, Model model) {
+		model.addAttribute("carrello", this.carrelloService.tutte());
+		return "richiesta";
 	}
 }

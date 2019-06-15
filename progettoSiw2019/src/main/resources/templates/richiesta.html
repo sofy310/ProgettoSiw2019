@@ -8,20 +8,28 @@
 <body>
 	<h1>Riepilogo richiesta inviata:</h1>
 	<div>
-		Nome: <span th:txt="${richiesta.nome}">Giovanni</span>
+		Nome: <span th:txt="${cliente.nome}">Giovanni</span>
 	</div>
 	<div>
-		Cognome : <span th:txt="${richiesta.cognome}">Bianchi</span>
+		Cognome : <span th:txt="${cliente.cognome}">Bianchi</span>
 	</div>
 	<div>
-		Email: <span th:txt="${richiesta.email}">email@gmail.com</span>
+		Email: <span th:txt="${cliente.email}">email@gmail.com</span>
 	</div>
 	<div>
-		Indirizzo di consegna: <span th:txt="${richiesta.indirizzo}">via Macchia Palocco</span>
+		Indirizzo di consegna: <span th:txt="${cliente.indirizzo}">via Macchia Palocco</span>
 	</div>
 	
 	<div>
-	Queste sono le foto che hai selezionato:
+	<h2>Queste sono le foto che hai selezionato:</h2>
+	</div>
+	<div> 
+		<ul>
+			<li th:each = "fotografia : ${carrello}">
+				Nome <span th:text = ${fotografia.nome}>NomeFotografia</span>
+				Descrizione <span th:text = "${fotografia.descrizione}">DescrizioneFotografia</span> 
+			</li>
+		</ul>
 	</div>
 </body>
 </html>
