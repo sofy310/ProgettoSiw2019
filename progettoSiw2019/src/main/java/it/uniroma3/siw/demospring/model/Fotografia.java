@@ -1,5 +1,6 @@
 package it.uniroma3.siw.demospring.model;
 
+import java.net.URL;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
@@ -20,6 +21,8 @@ public class Fotografia {
 	private String descrizione;
 	
 	private LocalDate data;
+	
+	private URL url;
 	
 	@ManyToOne
 	private Album album;
@@ -67,6 +70,14 @@ public class Fotografia {
 
 	public void setData(LocalDate data) {
 		this.data = data;
+	}
+
+	public URL getUrl() {
+		return url;
+	}
+
+	public void setUrl(URL url) {
+		this.url = url;
 	}
 
 	public Album getAlbum() {
