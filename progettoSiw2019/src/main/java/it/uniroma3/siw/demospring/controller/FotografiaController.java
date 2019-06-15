@@ -26,7 +26,9 @@ public class FotografiaController {
 	
 	@RequestMapping("/addFotografiaNelCarrello")
 	public String addFotografiaNelCarrello(Model model, Fotografia fotografia) {
-		model.addAttribute("fotografia", this.carrelloService.inserisciNelCarrello(fotografia));
+		model.addAttribute("fotografiaCarrello", this.carrelloService.inserisciNelCarrello(fotografia));
+		model.addAttribute("fotografie", this.fotografiaService.tutte());
+		
 		return "galleriaFoto";
 	}
 	
