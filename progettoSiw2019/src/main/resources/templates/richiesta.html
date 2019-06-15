@@ -7,19 +7,18 @@
 </head>
 <body>
 	<h1>Riepilogo richiesta inviata:</h1>
-	<div>
-		Nome: <span th:txt="${cliente.nome}">Giovanni</span>
-	</div>
-	<div>
-		Cognome : <span th:txt="${cliente.cognome}">Bianchi</span>
-	</div>
-	<div>
-		Email: <span th:txt="${cliente.email}">email@gmail.com</span>
-	</div>
-	<div>
-		Indirizzo di consegna: <span th:txt="${cliente.indirizzo}">via Macchia Palocco</span>
-	</div>
-	
+		<div>
+		Nome: <span th:text="${cliente.nome}">Giovanni</span>
+		</div>
+		<div>
+		Cognome: <span th:text="${cliente.cognome}">Bianchi</span>
+		</div>
+		<div>
+		Indirizzo: <span th:text="${cliente.indirizzo}">via di macchia Palocco</span>
+		</div>
+		<div>
+		e-mail: <span th:text="${cliente.email}">giovanniBianchi@gmail.com</span>
+		</div>				
 	<div>
 	<h2>Queste sono le foto che hai selezionato:</h2>
 	</div>
