@@ -7,7 +7,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import it.uniroma3.siw.demospring.model.Fotografia;
+import it.uniroma3.siw.demospring.model.FotografiaCarrello;
 import it.uniroma3.siw.demospring.repository.CarrelloRepository;
 
 @Service
@@ -17,12 +17,12 @@ public class CarrelloService {
 	CarrelloRepository carrelloRepository;
 	
 	@Transactional
-	public Fotografia inserisciNelCarrello(Fotografia fotografia) {
+	public FotografiaCarrello inserisciNelCarrello(FotografiaCarrello fotografia) {
 		return this.carrelloRepository.save(fotografia);
 	}
 	
 	@Transactional
-	public List<Fotografia> tutte() {
-		return(List<Fotografia>)this.carrelloRepository.findAll();
+	public List<FotografiaCarrello> tutte() {
+		return(List<FotografiaCarrello>)this.carrelloRepository.findAll();
 	}
 }
