@@ -39,7 +39,12 @@ body{
 .galleria img:hover{
     filter:grayscale(0);
     transform:scale(1.1);
+}
 
+.descrizioneFotografia{
+	vertical-align: middle;
+	width:230px;	
+	font-size: 20;
 }
 
 .login { 
