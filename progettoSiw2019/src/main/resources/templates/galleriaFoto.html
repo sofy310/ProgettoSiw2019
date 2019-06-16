@@ -3,25 +3,40 @@
 <head>
 <title> Galleria Foto </title>
 
-	<link rel="stylesheet" type="text/css" href="css/galleriaFoto.css"/>
-    <link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
+
+	<link rel="stylesheet" type="text/css" th:href="@{/css/galleriaFoto.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
     <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
     </script>
 </head>
 <body>
 <h1> Galleria Foto </h1>
-
-	<div class="galleria">
-	<ul>
-	<span th:each = "fotografia : ${fotografie}">
-		<a th:href="${fotografia.url}" th:data-lightbox="mygallery" th:data-title = "${fotografia.nome}"  >
-		<img src="{'/static' + ${fotografia.url}}" th:src="@{${fotografia.url}}"/></a>
-		</span>
-		</ul>
-		</div>
-	<div class = "carrello">
-		<a th:href = "carrello"
+	
+	<div class = "linkCarrello">
+		<p>
+		<a th:href = "vaiAlCarrello"
 			th:text = "Carrello">Carrello</a>
+		</p>	
 	</div>
+	
+	<div class="galleria">
+		<ul>
+	
+			<li th:each = "fotografia : ${fotografie}">
+			<div>
+		
+				<a th:href="${fotografia.url}" th:data-lightbox="mygallery" th:data-title = "${fotografia.nome}">
+				<img src="{'/static' + ${fotografia.url}}" th:src="@{${fotografia.url}}"/></a>
+				<span th:text = "${fotografia.nome}">NomeFotografia</span>
+				<span th:text = "${fotografia.descrizione}">DescrizioneFotografia</span>
+				<a th:href = "@{'/addFotografiaNelCarrello/'+${fotografia.id}}"
+					th:text = "Aggiungi_al_carrello">SelezionaFotografia</a>
+			</div>
+			</li>	
+		</ul>
+	</div>
+		
+
+
 </body>
 </html>

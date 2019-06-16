@@ -8,7 +8,12 @@
 </head>
 <body>
 <h3> Queste sono le fotografie che hai nel carrello </h3>
-
+	
+	<ul>
+	<li th:each = "fotografiaCarrello : ${fotografieCarrello}">
+		<span th:text = "${fotografiaCarrello.nome}">NomeFotografia</span>
+	</li>
+	</ul>
 	
 	<a th:href = "addRichiesta" 
 			th:text = "Richiedi">Richiesta</a>
