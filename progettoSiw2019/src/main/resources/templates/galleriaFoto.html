@@ -14,7 +14,7 @@
 	
 	<div class = "linkCarrello">
 		<p>
-		<a th:href = "vaiAlCarrello"
+		<a th:href = "@{/vaiAlCarrello}"
 			th:text = "Carrello">Carrello</a>
 		</p>	
 	</div>
@@ -27,8 +27,10 @@
 		
 				<a th:href="${fotografia.url}" th:data-lightbox="mygallery" th:data-title = "${fotografia.nome}">
 				<img src="{'/static' + ${fotografia.url}}" th:src="@{${fotografia.url}}"/></a>
+				
 				<span th:text = "${fotografia.nome}">NomeFotografia</span>
 				<span th:text = "${fotografia.descrizione}">DescrizioneFotografia</span>
+				<span th:text = "${fotografia.prezzo}">PrezzoFotografia</span>
 				<a th:href = "@{'/addFotografiaNelCarrello/'+${fotografia.id}}"
 					th:text = "Aggiungi_al_carrello">SelezionaFotografia</a>
 			</div>

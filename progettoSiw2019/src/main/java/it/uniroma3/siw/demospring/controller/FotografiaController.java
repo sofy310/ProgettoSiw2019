@@ -3,7 +3,6 @@ package it.uniroma3.siw.demospring.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -37,16 +36,28 @@ public class FotografiaController {
 	public String addFotografiaNelCarrello(@PathVariable("id") Long id, Model model) {
 		if(id!=null) {
 			Fotografia f = this.fotografiaService.fotografiaPerId(id);
-			FotografiaCarrello fc = new FotografiaCarrello(f.getNome(), f.getDescrizione(), f.getUrl());
+			FotografiaCarrello fc = new FotografiaCarrello(f.getNome(), f.getDescrizione(), f.getPrezzo(), f.getUrl());
 			this.carrelloService.inserisciNelCarrello(fc);
+			model.addAttribute("fotografie", this.fotografiaService.tutte());
+			return "galleriaFoto";
 		}
-		model.addAttribute("fotografie", this.fotografiaService.tutte());
-		return "galleriaFoto";
+		else {
+			model.addAttribute("fotografie", this.fotografiaService.tutte());
+			return "galleriaFoto";
+		}
+
 	}
 	
-	@RequestMapping(value = "/vaiAlCarrello")
+	@RequestMapping(value = "/vaiAlCarrello", method = RequestMethod.GET)
 	public String carrello(Model model) {
+		if(this.carrelloService.tutte().isEmpty()) {
+			model.addAttribute("fotografie", this.fotografiaService.tutte());
+			return "galleriaFoto";
+		}
+		else {
 			model.addAttribute("fotografieCarrello", this.carrelloService.tutte());
 			return "carrello";
+		}
+
 	}
 }

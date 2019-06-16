@@ -37,13 +37,28 @@ public class FotografiaDB implements ApplicationRunner{
 		String u7 = "/images/galleria/foto7.jpg";
 
 		
-		Fotografia f1 = new Fotografia("Lapponia", "tramonto", u1);
-		Fotografia f2 = new Fotografia("Lapponia", "Santa Claus Village", u2);
-		Fotografia f3 = new Fotografia("Edimburgo", "Arthur's Seat", u3);
-		Fotografia f4 = new Fotografia("Viterbo", "Valle del treja", u4);		
-		Fotografia f5 = new Fotografia("Barcellona", "piazza bla bla bla", u5);
-		Fotografia f6 = new Fotografia("Zaanse Schans", "mulini", u6);
-		Fotografia f7 = new Fotografia("Amsterdam", "castello bla bla", u7);
+		Fotografia f1 = new Fotografia("Santa Claus village, Lapland, Napapijri", 
+				"Questa fotografia è stata scattata al Circolo Polare Artico, "
+				+ "nel villaggio di Santa Claus.",
+				"12€", u1);
+		Fotografia f2 = new Fotografia("Lapland, Napapijri",
+				"Questa fotografia è stata scattata al Circolo Polare Artico, "
+				+ "vicino al villaggio di Santa Claus.",
+				"12€", u2);
+		Fotografia f3 = new Fotografia("Arthur's Seat, Edimburgo", 
+				"Questa fotografia è stata scattata sulla punta massima del gruppo"
+				+ " di colline che fanno parte del Holyrood Park, "
+				+ "un pezzo di paesaggio selvaggio al centro della città di Edimburgo.", 
+				"13€", u3);
+		Fotografia f4 = new Fotografia("Valle del Treja, Campagnano Romano", 
+				"Questa fotografia è stata scattata nel parco regionale della"
+				+ "Valle del treja, un'area protetta del lazio, "
+				+ "dove le cascate rappresentate sono parte di un affluente di destra"
+				+ "del fiume Tevere.", 
+				"22€", u4);		
+		Fotografia f5 = new Fotografia("Fotografia Barcellona", "piazza bla bla bla", "5€", u5);
+		Fotografia f6 = new Fotografia("Fotografia Zaanse Schans", "mulini", "15€", u6);
+		Fotografia f7 = new Fotografia("Fotografia Amsterdam", "castello bla bla", "30€", u7);
 		
 		
 		

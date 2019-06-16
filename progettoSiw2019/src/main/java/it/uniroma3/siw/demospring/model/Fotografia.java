@@ -19,6 +19,8 @@ public class Fotografia {
 	
 	private String descrizione;
 	
+	private String prezzo;
+	
 	private LocalDate data;
 	
     private String url;
@@ -29,9 +31,10 @@ public class Fotografia {
 	@ManyToOne
 	private Fotografo fotografo;
 
-	public Fotografia(String nome, String descrizione, String url) {
+	public Fotografia(String nome, String descrizione, String prezzo, String url) {
 		this.nome = nome;
 		this.descrizione = descrizione;
+		this.prezzo = prezzo;
 		this.url = url;
 	}
 	
@@ -69,6 +72,14 @@ public class Fotografia {
 
 	public void setData(LocalDate data) {
 		this.data = data;
+	}
+
+	public String getPrezzo() {
+		return prezzo;
+	}
+
+	public void setPrezzo(String prezzo) {
+		this.prezzo = prezzo;
 	}
 
 	public String getUrl() {

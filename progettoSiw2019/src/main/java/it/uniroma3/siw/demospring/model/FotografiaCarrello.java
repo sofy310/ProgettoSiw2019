@@ -21,6 +21,8 @@ public class FotografiaCarrello {
 	
 	private LocalDate data;
 	
+	private String prezzo;
+	
     private String url;
 	
 	@ManyToOne
@@ -29,9 +31,10 @@ public class FotografiaCarrello {
 	@ManyToOne
 	private Fotografo fotografo;
 
-	public FotografiaCarrello(String nome, String descrizione, String url) {
+	public FotografiaCarrello(String nome, String descrizione, String prezzo, String url) {
 		this.nome = nome;
 		this.descrizione = descrizione;
+		this.prezzo = prezzo;
 		this.url = url;
 	}
 	
@@ -69,6 +72,15 @@ public class FotografiaCarrello {
 
 	public void setData(LocalDate data) {
 		this.data = data;
+	}
+	
+
+	public String getPrezzo() {
+		return prezzo;
+	}
+
+	public void setPrezzo(String prezzo) {
+		this.prezzo = prezzo;
 	}
 
 	public String getUrl() {
