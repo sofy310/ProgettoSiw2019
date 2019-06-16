@@ -2,6 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
 	
+		
+	<link rel="stylesheet" type="text/css" th:href="@{/css/fotografia.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
+    <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
+    </script>	
+	
 <body>
 <form th:action = "@{/richiesta}" method = "POST" th:object = "${cliente}">
 	<h1>Compila la richiesta</h1>

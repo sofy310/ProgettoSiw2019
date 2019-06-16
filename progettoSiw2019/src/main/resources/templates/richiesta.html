@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.tyhmeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
-<head>
+	
+		
+	<link rel="stylesheet" type="text/css" th:href="@{/css/fotografia.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
+    <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
+    </script>	
+    
+    <head>
 <meta charset="ISO-8859-1">
 <title>Richiesta</title>
 </head>
 <body>
 	<h1>Riepilogo richiesta inviata:</h1>
+	<h3>I tuoi dati:</h3>
 		<div>
-		Nome: <span th:text="${cliente.nome}">Giovanni</span>
+		<b>Nome: </b><span th:text="${cliente.nome}">Giovanni</span>
 		</div>
 		<div>
-		Cognome: <span th:text="${cliente.cognome}">Bianchi</span>
+		<b>Cognome: </b><span th:text="${cliente.cognome}">Bianchi</span>
 		</div>
 		<div>
-		Indirizzo: <span th:text="${cliente.indirizzo}">via di macchia Palocco</span>
+		<b>Indirizzo: </b><span th:text="${cliente.indirizzo}">via di macchia Palocco</span>
 		</div>
 		<div>
-		e-mail: <span th:text="${cliente.email}">giovanniBianchi@gmail.com</span>
+		<b>e-mail: </b><span th:text="${cliente.email}">giovanniBianchi@gmail.com</span>
 		</div>				
-	<div>
-	<h2>Queste sono le foto che hai selezionato:</h2>
-	</div>
-	<div> 
+	<div class = "fotoSelezionate">
+	<h3>Fotografie Richieste:</h3>
 		<ul>
-			<li th:each = "fotografia : ${carrello}">
-				Nome <span th:text = ${fotografia.nome}>NomeFotografia</span>
-				Descrizione <span th:text = "${fotografia.descrizione}">DescrizioneFotografia</span> 
+			<li th:each = "fotografiaCarrello : ${fotografieCarrello}">
+			<span th:text = ${fotografiaCarrello.nome}>NomeFotografia</span>
+			<div class = "immagineSelezionata">
+				<img src = "${fotografiaCarrello.url}" th:src="@{${fotografiaCarrello.url}}"/>;
+			</div>
 			</li>
 		</ul>
 	</div>
+	
 </body>
 </html>

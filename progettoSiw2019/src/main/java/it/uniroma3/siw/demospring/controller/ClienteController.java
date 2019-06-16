@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import it.uniroma3.siw.demospring.model.Cliente;
+import it.uniroma3.siw.demospring.services.CarrelloService;
 import it.uniroma3.siw.demospring.services.ClienteService;
 import it.uniroma3.siw.demospring.validator.ClienteValidator;
 
@@ -19,6 +20,9 @@ public class ClienteController {
 
 	@Autowired
 	ClienteService clienteService;
+	
+	@Autowired
+	CarrelloService carrelloService;
 	
 	@Autowired
 	ClienteValidator clienteValidator;
@@ -37,6 +41,7 @@ public class ClienteController {
 		if(!bindingResult.hasErrors()) {
 			this.clienteService.inserisci(cliente);
 			model.addAttribute("cliente", cliente);
+			model.addAttribute("fotografieCarrello", this.carrelloService.tutte());
 			return "richiesta";
 		}
 		else {
