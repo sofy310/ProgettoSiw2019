@@ -31,7 +31,7 @@ public class ClienteController {
 	}
 	
 	@RequestMapping(value = "/richiesta", method = RequestMethod.POST)
-	public String newFotografo(@Valid @ModelAttribute Cliente cliente, 
+	public String newCliente(@Valid @ModelAttribute Cliente cliente, 
 			Model model, BindingResult bindingResult) {
 		this.clienteValidator.validate(cliente, bindingResult);
 		if(!bindingResult.hasErrors()) {

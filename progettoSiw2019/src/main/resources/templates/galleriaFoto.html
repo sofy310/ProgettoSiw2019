@@ -10,22 +10,16 @@
 </head>
 <body>
 <h1> Galleria Foto </h1>
+
 	<div class="galleria">
 	<ul>
 	<span th:each = "fotografia : ${fotografie}">
 		<a th:href="${fotografia.url}" th:data-lightbox="mygallery" th:data-title = "${fotografia.nome}"  >
-		<img src="{'/static' + ${fotografia.url}}" th:src="@{${fotografia.url}}"/>
-		
-		<a th:href = "addFotografiaNelCarrello" 
-			th:text = "Seleziona">Seleziona</a>
-		
-		</a>
-		
- </span>  
-	</ul>
-	</div>
-	
-	<div>
+		<img src="{'/static' + ${fotografia.url}}" th:src="@{${fotografia.url}}"/></a>
+		</span>
+		</ul>
+		</div>
+	<div class = "carrello">
 		<a th:href = "carrello"
 			th:text = "Carrello">Carrello</a>
 	</div>
