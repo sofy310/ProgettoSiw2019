@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/fotografia.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
+    <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
+    </script>	
+
+<title>Fotografia</title>
+<body>
+	<h1>Fotografia</h1>
+
+	<div class = "nomeFotografia">					
+		<b>Titolo:</b>
+		<span th:text = "${fotografia.nome}">NomeFotografia</span>
+	</div>		
+	<div class = "descrizioneFotografia">					
+		<b>Descrizione:</b>
+		<span th:text = "${fotografia.descrizione}">DescrizioneFotografia</span>
+	</div>
+	<div class = "prezzoFotografia">			
+		<b>Prezzo:</b>	
+		<span th:text = "${fotografia.prezzo}">PrezzoFotografia</span>
+	</div>
+
+
+	<div class = "immagine">
+	<img src = "${fotografia.url}" th:src="@{${fotografia.url}}"/>;
+	</div>
+	
+	<div class = "selezionaFotografia">
+		<a th:href = "@{'/addFotografiaNelCarrello/'+${fotografia.id}}"
+			th:text = "Aggiungi_al_carrello">SelezionaFotografia</a>
+	</div>
+</body>
+</html>

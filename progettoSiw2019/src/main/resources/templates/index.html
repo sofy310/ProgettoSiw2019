@@ -3,14 +3,19 @@
 	xmlns="http://www.w3.org/1999/html">
 	<head>
 		<title>SILPH SPA</title>
-		<link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
+
+	<link rel="stylesheet" type="text/css" th:href="@{/css/index.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
     <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
     </script>
+    
 	</head>
 	<body><h1> Benvenuto alla SILPH SPA</h1>
+	
 	<div class="links"><div>
 			<a th:href="@{/getGalleria}">GalleriaFoto</a>
+			<a th:href="@{/getFotografi}">Fotografi</a>
+			<a th:href="@{/getAlbum}">Album</a>
 		</div>
 	</div>
 	</body>

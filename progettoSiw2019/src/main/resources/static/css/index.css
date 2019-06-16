@@ -8,10 +8,10 @@ h1{
 
 .links{
 	text-align: center;
-	color: black;
+	color: purple;
 	margin: 40px 0 50px;
   	word-spacing: 15px; 
-	font-size: 20;
+	font-size: 30;
 
 }
 
@@ -20,7 +20,7 @@ h1{
 	color: #2F2F2F;
 	margin: 5px 0 5px;
 	text-align: right;
-	font-size: 20;
+	font-size: 30;
 }
 
 body{

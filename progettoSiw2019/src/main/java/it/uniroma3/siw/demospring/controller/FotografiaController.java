@@ -25,12 +25,6 @@ public class FotografiaController {
 	@Autowired
 	FotografiaValidator fotografiaValidator;
 	
-	@RequestMapping(value="/getGalleria")
-	public String getGalleria(Model model) {
-		model.addAttribute("fotografie", this.fotografiaService.tutte());
-		model.addAttribute("carrello", new FotografiaCarrello());
-		return "galleriaFoto";
-	}
 	
 	@RequestMapping(value = "/addFotografiaNelCarrello/{id}")
 	public String addFotografiaNelCarrello(@PathVariable("id") Long id, Model model) {
@@ -47,6 +41,22 @@ public class FotografiaController {
 		}
 
 	}
+	
+	@RequestMapping(value = "/paginaFotografia/{id}")
+	public String paginaFotografia(@PathVariable("id") Long id, Model model) {
+		if(id!=null) {
+			Fotografia f = this.fotografiaService.fotografiaPerId(id);
+			model.addAttribute("fotografia", f);
+			return "fotografia";
+		}
+		else {
+			model.addAttribute("fotografie", this.fotografiaService.tutte());
+			return "galleriaFoto";
+		}
+
+	}
+	
+	
 	
 	@RequestMapping(value = "/vaiAlCarrello", method = RequestMethod.GET)
 	public String carrello(Model model) {

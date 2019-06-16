@@ -1,0 +1,49 @@
+bode{
+	font-family: verdana;
+	}
+h1{
+	text-align: center;
+	color: purple;
+	margin: 30px 0 50px;
+	font-size: 30;
+}
+
+body{
+	background-color: thistle;
+}
+
+.immagine img{
+	margin: auto 0;
+	vertical-align: middle;
+	border: 5px solid #333333;
+	background: #333333;
+	width:500px;
+	padding:5px;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.nomeFotografia{
+	color: purple;
+	font-family: verdana;
+	font-size: 30;
+}
+.descrizioneFotografia{
+	color: purple;
+	font-family: verdana;	
+	font-size: 30;	
+}
+.prezzoFotografia{
+	color: purple;
+	font-family: verdana;	
+	font-size: 80;	
+}
+.selezionaFotografia{
+	text-align: center;
+	color: purple;
+	margin: 30px 0 50px;
+	font-size: 30;
+}
