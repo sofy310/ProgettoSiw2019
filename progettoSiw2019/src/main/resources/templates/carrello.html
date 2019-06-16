@@ -1,21 +1,32 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
+	
+		<link rel="stylesheet" type="text/css" th:href="@{/css/carrello.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
+    <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
+    </script>
 <head>
 	<title> Carrello </title>
 </head>
 
 <body>
-	<h3> Queste sono le fotografie che hai nel carrello </h3>
+	<h1>Carrello</h1>
+	<h2> Queste sono le fotografie che hai nel carrello </h2>
 	
 		<ul>
+		<div class = "fotoCarrello">
 			<li th:each = "fotografiaCarrello : ${fotografieCarrello}">
+				
 				<span th:text = "${fotografiaCarrello.nome}">NomeFotografia</span>
-				<span th:text = "${fotografiaCarrello.prezzo}">PrezzoFotografia</span>
-
+				
+				<span class = "prezzo" th:text = "${fotografiaCarrello.prezzo}">PrezzoFotografia</span>
 			</li>
+		</div>
 		</ul>
 		
+		<div class = "richiedi">
 		<a th:href = "addRichiesta" 
 			th:text = "Richiedi">Richiesta</a>
+		</div>
 </body>
 </html>
