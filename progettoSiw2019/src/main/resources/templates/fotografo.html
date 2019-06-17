@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<body>
+	<div>
+		<h4>Fotografo</h4>
+		<div>
+		Nome: <span th:text="${fotografo.nome}">Giovanni</span>
+		</div>
+		<div>
+		Cognome: <span th:text="${fotografo.cognome}">Bianchi</span>
+		</div>
+		<div>
+		Anno Di Nascita <span th:text="${fotografo.annoDiNascita}">1996</span>
+		</div>
+		
+		
+		<h4>Questi sono gli Album di questo fotografo</h4>
+		<div>
+		<ul>
+			<li th:each = "a : ${fotografo.album}">
+		
+				<span th:text = "${a.nome}">NomeAlbum</span>
+				
+			</li>
+		</ul>
+		</div>
+	</div>
+</body>
+</html>

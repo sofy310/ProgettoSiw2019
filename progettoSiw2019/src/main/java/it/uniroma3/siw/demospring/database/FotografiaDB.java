@@ -65,6 +65,9 @@ public class FotografiaDB implements ApplicationRunner{
 		this.albumRepository.save(a1);
 		this.albumRepository.save(a2);
 		this.albumRepository.save(a3);
+		this.albumRepository.save(a4);
+		this.albumRepository.save(a5);
+
 		
 		
 		Fotografia f1 = new Fotografia("Santa Claus village, Lapland, Napapijri", 
@@ -94,9 +97,9 @@ public class FotografiaDB implements ApplicationRunner{
 		f2.setAlbum(a1);
 		f3.setAlbum(a2);
 		f4.setAlbum(a3);
-		f5.setAlbum(a1);
-		f6.setAlbum(a1);
-		f7.setAlbum(a1);
+		f5.setAlbum(a4);
+		f6.setAlbum(a5);
+		f7.setAlbum(a5);
 		
 		f1.setFotografo(f1.getAlbum().getFotografo());
 		f2.setFotografo(f2.getAlbum().getFotografo());

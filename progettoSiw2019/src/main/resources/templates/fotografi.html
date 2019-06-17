@@ -14,8 +14,11 @@
 	<li th:each = "fotografo : ${fotografi}">
 		<div class = "fotografi">
 
-		<span th:text = "${fotografo.nome}"	>NomeFotografo</span>
-		<span th:text = "${fotografo.cognome}">CognomeFotografo</span>
+		<a th:href = "@{'/fotografo' + '/' + ${fotografo.id}}" 
+		th:text = "${fotografo.nome}">NomeFotografo</a>
+		
+		<a th:href = "@{'/fotografo' + '/' + ${fotografo.id}}" 
+		th:text = "${fotografo.cognome}">CognomeFotografo</a>
 		</div>
 	</li>
 </ul>
