@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/fotografo.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
+    
+<body>
+<h1>Lista Album</h1>
+<div>
+<ul>
+	<li th:each = "album : ${listaAlbum}">
+		<div class = "album">
+
+		<span th:text = "${album.nome}"	>NomeAlbum</span>
+		</div>
+	</li>
+</ul>
+</div>
+</body>
+</html>

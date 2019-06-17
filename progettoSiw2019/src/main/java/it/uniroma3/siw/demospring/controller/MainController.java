@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import it.uniroma3.siw.demospring.model.FotografiaCarrello;
+import it.uniroma3.siw.demospring.services.AlbumService;
 import it.uniroma3.siw.demospring.services.FotografiaService;
 import it.uniroma3.siw.demospring.services.FotografoService;
 
@@ -18,6 +19,9 @@ public class MainController {
 
 	@Autowired
 	FotografoService fotografoService;
+	
+	@Autowired
+	AlbumService albumService;
 		
 	
 		
@@ -37,6 +41,12 @@ public class MainController {
 	public String getFotografi(Model model) {
 		model.addAttribute("fotografi", this.fotografoService.tutti());
 		return "fotografi";
+	}
+	
+	@RequestMapping(value="getAlbum")
+	public String getAlbum (Model model) {
+		model.addAttribute("listaAlbum", this.albumService.tutti());
+		return "listaAlbum";
 	}
 
 
