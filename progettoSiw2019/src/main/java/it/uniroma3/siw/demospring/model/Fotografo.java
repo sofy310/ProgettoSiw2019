@@ -2,6 +2,7 @@ package it.uniroma3.siw.demospring.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,10 +22,10 @@ public class Fotografo {
 	
 	private int annoDiNascita;
 	
-	@OneToMany(mappedBy = "fotografo")
+	@OneToMany(mappedBy = "fotografo", cascade = CascadeType.ALL)
 	private List<Fotografia> fotografie;
 	
-	@OneToMany(mappedBy = "fotografo")
+	@OneToMany(mappedBy = "fotografo", cascade = CascadeType.ALL)
 	private List<Album> album;
 
 	public Fotografo(String nome, String cognome, int annoDiNascita) {
@@ -75,6 +76,8 @@ public class Fotografo {
 
 	public void setFotografie(List<Fotografia> fotografie) {
 		this.fotografie = fotografie;
+        this.fotografie.forEach(x -> x.setFotografo(this));
+
 	}
 
 	public List<Album> getAlbum() {

@@ -2,6 +2,7 @@ package it.uniroma3.siw.demospring.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,15 +19,14 @@ public class Album {
 	
 	private String nome;
 	
-	@OneToMany(mappedBy = "album")
+	@OneToMany(mappedBy = "album", cascade = CascadeType.ALL)
 	private List<Fotografia> fotografie;
 	
 	@ManyToOne
 	private Fotografo fotografo;
 
-	public Album(String nome, Fotografo fotografo) {
+	public Album(String nome) {
 		this.nome = nome;
-		this.fotografo = fotografo;
 	}
 	
 	public Album() {
@@ -55,6 +55,8 @@ public class Album {
 
 	public void setFotografie(List<Fotografia> fotografie) {
 		this.fotografie = fotografie;
+        this.fotografie.forEach(x -> x.setAlbum(this));
+
 	}
 
 	public Fotografo getFotografo() {
