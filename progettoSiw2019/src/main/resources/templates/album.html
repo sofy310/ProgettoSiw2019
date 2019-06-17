@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/fotografia.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
+    <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
+    
+    </script>
+<body>
+	<div>
+		<h4>Album</h4>
+		<div>
+		Nome: <span th:text="${album.nome}">Album Spagna</span>
+		</div>
+
+		
+		
+		<h4>Queste sono le foto di questo Album</h4>
+		<div>
+		<ul>
+			<li th:each = "fotografia : ${album.fotografie}">
+		
+				<span th:text = "${fotografia.nome}">NomeFotografia</span>
+				<div class = "immagine">
+					<img src = "${fotografia.url}" th:src="@{${fotografia.url}}"/>;
+				</div>
+				
+			</li>
+		</ul>
+		</div>
+	</div>
+</body>
+</html>
