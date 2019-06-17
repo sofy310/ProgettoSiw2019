@@ -27,8 +27,4 @@ public class CarrelloService {
 		return(List<FotografiaCarrello>)this.carrelloRepository.findAll();
 	}
 	
-	@Transactional
-	public List <FotografiaCarrello> delete (Fotografia fotografia){
-		return this.carrelloRepository.delete(fotografia);
-	}
 }
