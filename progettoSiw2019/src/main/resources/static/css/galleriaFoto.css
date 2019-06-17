@@ -22,7 +22,9 @@ body{
 }
 
 
-
+.black{
+	color: "black";
+}
 
 .galleria{
 	margin:10px 50px;
