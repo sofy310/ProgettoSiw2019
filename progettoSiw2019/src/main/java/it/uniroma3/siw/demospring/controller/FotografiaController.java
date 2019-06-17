@@ -61,9 +61,8 @@ public class FotografiaController {
 	@RequestMapping(value = "/vaiAlCarrello", method = RequestMethod.GET)
 	public String carrello(Model model) {
 		if(this.carrelloService.tutte().isEmpty()) {
-			model.addAttribute("mex", "Il carrello è vuoto");
-			model.addAttribute("fotografie", this.fotografiaService.tutte());
-			return "galleriaFoto";
+			//model.addAttribute("mex", "Il carrello è vuoto");
+			return "carrelloVuoto";
 		}
 		else {
 			model.addAttribute("fotografieCarrello", this.carrelloService.tutte());
