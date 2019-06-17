@@ -6,5 +6,4 @@ import it.uniroma3.siw.demospring.model.FotografiaCarrello;
 
 public interface CarrelloRepository extends CrudRepository<FotografiaCarrello, Long>{
 
-	
 }
