@@ -83,6 +83,8 @@ public class Fotografo {
 
 	public void setAlbum(List<Album> album) {
 		this.album = album;
+        this.album.forEach(x -> x.setFotografo(this));
+
 	}
 
 }

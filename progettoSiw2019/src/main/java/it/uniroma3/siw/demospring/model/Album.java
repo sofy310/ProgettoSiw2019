@@ -24,8 +24,9 @@ public class Album {
 	@ManyToOne
 	private Fotografo fotografo;
 
-	public Album(String nome) {
+	public Album(String nome, Fotografo fotografo) {
 		this.nome = nome;
+		this.fotografo = fotografo;
 	}
 	
 	public Album() {
@@ -62,6 +63,7 @@ public class Album {
 
 	public void setFotografo(Fotografo fotografo) {
 		this.fotografo = fotografo;
+
 	}
 	
 }
