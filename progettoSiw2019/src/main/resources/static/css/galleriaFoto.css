@@ -1,6 +1,11 @@
-
+.linkHomepage {
+	text-align: center;
+	color: purple;
+	margin: 30px 0 50px;
+	font-size: 30;
+}
 .linkCarrello {
-	text-align: right;
+	text-align: center;
 	color: purple;
 	margin: 30px 0 50px;
 	font-size: 30;

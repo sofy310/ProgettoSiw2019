@@ -7,6 +7,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import it.uniroma3.siw.demospring.model.Fotografia;
 import it.uniroma3.siw.demospring.model.FotografiaCarrello;
 import it.uniroma3.siw.demospring.repository.CarrelloRepository;
 
@@ -25,4 +26,5 @@ public class CarrelloService {
 	public List<FotografiaCarrello> tutte() {
 		return(List<FotografiaCarrello>)this.carrelloRepository.findAll();
 	}
+	
 }
