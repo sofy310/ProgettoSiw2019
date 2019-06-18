@@ -87,6 +87,10 @@ public class Funzionario {
 	public void setRichiesteClienti(List<Cliente> richiesteClienti) {
 		this.richiesteClienti = richiesteClienti;
 	}
-
+	
+	public boolean checkPassword(Funzionario funzionario) {
+		String passwordDaVerificare = funzionario.getPassword();
+		return this.password.equals(passwordDaVerificare);
+	}
 	
 }
