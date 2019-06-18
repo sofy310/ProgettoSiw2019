@@ -6,5 +6,5 @@ import it.uniroma3.siw.demospring.model.Funzionario;
 
 public interface FunzionarioRepository extends CrudRepository<Funzionario, Long>{
 	
-	public Funzionario findByEmail(String username);
+	public Funzionario findByUserName(String userName);
 }
