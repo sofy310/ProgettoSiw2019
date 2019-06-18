@@ -42,6 +42,7 @@ public class FotografiaDB implements ApplicationRunner{
 		String u5 = "/images/galleria/foto5.jpg";
 		String u6 = "/images/galleria/foto6.jpg";
 		String u7 = "/images/galleria/foto7.jpg";
+		String u8 = "/images/galleria/foto8.jpg";
 
 		Fotografo p= new Fotografo("Francesco", "Bianchi", 1980);
 		this.fotografoRepository.save(p);
@@ -92,7 +93,8 @@ public class FotografiaDB implements ApplicationRunner{
 		Fotografia f5 = new Fotografia("Fotografia Barcellona", "piazza bla bla bla", "5€", u5);
 		Fotografia f6 = new Fotografia("Fotografia Zaanse Schans", "mulini", "15€", u6);
 		Fotografia f7 = new Fotografia("Fotografia Amsterdam", "castello bla bla", "30€", u7);
-		
+		Fotografia f8 = new Fotografia("Fotografia Barcellone", "piazza bla bla", "30€", u8);
+
 		f1.setAlbum(a1);
 		f2.setAlbum(a1);
 		f3.setAlbum(a2);
@@ -100,6 +102,8 @@ public class FotografiaDB implements ApplicationRunner{
 		f5.setAlbum(a4);
 		f6.setAlbum(a5);
 		f7.setAlbum(a5);
+		f8.setAlbum(a5);
+
 		
 		f1.setFotografo(f1.getAlbum().getFotografo());
 		f2.setFotografo(f2.getAlbum().getFotografo());
@@ -108,6 +112,7 @@ public class FotografiaDB implements ApplicationRunner{
 		f5.setFotografo(f5.getAlbum().getFotografo());
 		f6.setFotografo(f6.getAlbum().getFotografo());
 		f7.setFotografo(f7.getAlbum().getFotografo());
+		f8.setFotografo(f8.getAlbum().getFotografo());
 
 
 
@@ -118,6 +123,7 @@ public class FotografiaDB implements ApplicationRunner{
 		this.fotografiaRepository.save(f5);
 		this.fotografiaRepository.save(f6);
 		this.fotografiaRepository.save(f7);
+		this.fotografiaRepository.save(f8);
 
 
 		
