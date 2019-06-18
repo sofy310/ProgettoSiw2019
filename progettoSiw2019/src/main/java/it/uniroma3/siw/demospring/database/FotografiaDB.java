@@ -139,11 +139,7 @@ public class FotografiaDB implements ApplicationRunner{
 		this.fotografiaRepository.save(f9);
 		this.fotografiaRepository.save(f10);
 		this.fotografiaRepository.save(f11);
-
-
 		
-	}
-
-	
+	}	
 	
 }
