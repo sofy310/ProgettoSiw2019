@@ -12,7 +12,8 @@
 	<li th:each = "album : ${listaAlbum}">
 		<div class = "album">
 
-		<span th:text = "${album.nome}"	>NomeAlbum</span>
+		<a th:href = "@{'/album' + '/' + ${album.id}}"
+		 th:text = "${album.nome}"	>NomeAlbum</a>
 		</div>
 	</li>
 </ul>
