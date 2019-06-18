@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h4>Login Funzionario</h4>
-	<form th:action="@{/loginControl}" method="POST"
+	<form th:action="@{/loginController}" method="POST"
 		th:object="${funzionario}">
 		<p>
 			<input type="text" th:field="*{userName}" /> Email <span
