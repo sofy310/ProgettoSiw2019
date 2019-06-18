@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	
+<body>
+<form th:action = "@{/album}" method = "POST" th:object = "${album}">
+
+	<h2>Seleziona il Fotografo di quest'album</h2>
+	<ul>
+		<li th:each = "fotografo : ${fotografi}">
+			<div class = "fotografi">
+	
+			<a th:href = "@{'/fotografoSelezionato' + '/' + ${fotografo.id}}" 
+			th:text = "${fotografo.nome}">NomeFotografo</a>
+			
+			<a th:href = "@{'/fotografoSelezionato' + '/' + ${fotografo.id}}" 
+			th:text = "${fotografo.cognome}">CognomeFotografo</a>
+			</div>
+		</li>		
+	</ul>
+	<table>
+
+	</table>
+</form>
+</body>
+</html>

@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import it.uniroma3.siw.demospring.model.Album;
+import it.uniroma3.siw.demospring.model.Fotografo;
 import it.uniroma3.siw.demospring.services.AlbumService;
+import it.uniroma3.siw.demospring.services.FotografoService;
 import it.uniroma3.siw.demospring.validator.AlbumValidator;
 
 @Controller
@@ -24,10 +26,19 @@ public class AlbumController {
 	@Autowired
 	private AlbumValidator albumValidator;
 	
+	@Autowired
+	private FotografoService fotografoService;
+	
+	@RequestMapping("/selezionaFotografo")
+	public String selezionaFotografo(Model model) {
+		model.addAttribute("fotografi", this.fotografoService.tutti());
+		return "selezionaFotografo";
+	}
+	
 	@RequestMapping("/addAlbum")
 	public String addAlbum(Model model) {
 		model.addAttribute("album", new Album());
-		return "albumForm.html";
+		return "albumForm";
 	}
 	
 	@RequestMapping(value = "/album", method = RequestMethod.POST)
@@ -37,10 +48,11 @@ public class AlbumController {
 		if(!bindingResult.hasErrors()) {
 			this.albumService.inserisci(album);
 			model.addAttribute("listaAlbum", this.albumService.tutti());
-			return "listaAlbum.html";
+			return "listaAlbum";
 		}
 		else {
-			return "albumForm.html";
+			model.addAttribute("fotografi", this.fotografoService.tutti());
+			return "albumForm";
 		}
 	}
 	
@@ -48,11 +60,27 @@ public class AlbumController {
 	public String getAlbum(@PathVariable("id") Long id, Model model) {
 		if(id!=null) {
 			model.addAttribute("album", this.albumService.albumPerId(id));
-			return "album.html";
+			return "album";
 		}
 		else {
 			model.addAttribute("listaAlbum", this.albumService.tutti());
-			return "listaAlbum.html";
+			return "listaAlbum";
 		}
 	}
+	
+	@RequestMapping(value = "/fotografoSelezionato/{id}", method = RequestMethod.GET)
+	public String selezionaFotografo(@PathVariable("id") Long id, Model model) {
+		if(id!=null) {
+			Fotografo fotografoSelezionato =  this.fotografoService.fotografoPerId(id);
+			fotografoSelezionato.setId(this.fotografoService.fotografoPerId(id).getId());
+			model.addAttribute("fotografoSelezionato", fotografoSelezionato);
+			return "fotografoSelezionato";
+		}
+		else {
+			model.addAttribute("fotografi", this.fotografoService.tutti());
+			return "selezionaFotografo";
+		}
+
+	}
+
 }

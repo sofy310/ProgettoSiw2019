@@ -6,13 +6,12 @@
 <title>Login page</title>
 </head>
 <body>
-	<h4>Effettua il login</h4>
-	<form th:action="@{/loginController}" method="POST" th:object="${funzionario}">
+	<h4>Effettua il login</h4>selezionaFotografo
 	<table>
 		<tr>
-			<td>Username: </td>
+			<tselezionaFotografod>Username: </td>
 			<td><input type = "text" th:field = "*{userName}"/></td>
-			<td th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></td>		
+	selezionaFotografo		<td th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></td>		
 		</tr>
 		<tr>
 			<td>Password: </td>
@@ -25,6 +24,5 @@
 				th:text="${datiErrati}"></span></td>
 		</tr>
 	</table>
-	</form>
 </body>
 </html>
