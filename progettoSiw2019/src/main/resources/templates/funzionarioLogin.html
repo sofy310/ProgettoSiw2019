@@ -10,11 +10,11 @@
 	<form th:action="@{/loginController}" method="POST"
 		th:object="${funzionario}">
 		<p>
-			<input type="text" th:field="*{userName}" /> Email <span
+			Username: <input type="text" th:field="*{userName}" /> <span
 				th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></span>
 		</p>
 		<p>
-			<input type="password" th:field="*{password}" /> Password <span
+			Password: <input type="password" th:field="*{password}" /> <span
 				th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
 		</p>
 		<p>
