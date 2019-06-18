@@ -1,0 +1,26 @@
+h1{
+	text-align: center;
+	color: purple;
+	margin: 30px 0 50px;
+	font-size: 50;
+
+	}
+h2{
+	color: purple;
+	margin: 10px 0 20px;
+	font-size: 30;
+}
+h3{
+	color: purple;
+	margin: 10px 0 20px;
+	font-size: 25;
+}
+h4{
+	color: purple;
+	margin: 10px 0 20px;
+	font-size: 22;
+}
+body{
+	background-color: thistle;
+}
+
