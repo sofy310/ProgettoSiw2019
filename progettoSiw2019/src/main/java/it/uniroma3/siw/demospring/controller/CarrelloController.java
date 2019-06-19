@@ -20,20 +20,15 @@ public class CarrelloController {
 		
 		if (this.carrelloService.tutte().contains(this.carrelloService.findById(id))) {
 			this.carrelloService.rimuoviFotografia(this.carrelloService.findById(id));
+			if(this.carrelloService.tutte().isEmpty()) {
+				return "carrelloVuoto";
+			}
+			else
+				model.addAttribute("fotografieCarrello", this.carrelloService.tutte());
+				return "carrello";
 		}
-		else {
-			model.addAttribute("fotorgafieCarrello", this.carrelloService.tutte());
+		else
+			model.addAttribute("fotografieCarrello", this.carrelloService.tutte());
 			return "carrello";
-		}
-		
-		if(this.carrelloService.tutte().isEmpty()) {
-				return "carelloVuoto";
-		}
-		else {
-			model.addAttribute("fotorgafieCarrello", this.carrelloService.tutte());
-			return "carrello";
-		}
 	}
-
-	
 }

@@ -29,12 +29,7 @@ public class CarrelloService {
 	
 	@Transactional
 	public void rimuoviFotografia(FotografiaCarrello fotografia) {
-		List <FotografiaCarrello> fotografie = this.tutte();
-		if (fotografie.contains(fotografia)) {
-			fotografie.remove(fotografia);
-		}else {
-			System.out.println("Fotografia non trovata");	
-		}
+		this.carrelloRepository.delete(fotografia);;
 	}
 	
 	@Transactional
