@@ -56,6 +56,20 @@ public class FotografiaController {
 
 	}
 	
+	@RequestMapping(value = "/ingrandimento/{id}")
+	public String ingrandimentoFotografia(@PathVariable("id") Long id, Model model) {
+		if(id!=null) {
+			Fotografia f = this.fotografiaService.fotografiaPerId(id);
+			model.addAttribute("fotografia", f);
+			return "ingrandimentoFotografia";
+		}
+		else {
+			model.addAttribute("fotografie", this.fotografiaService.tutte());
+			return "listaAlbum";
+		}
+
+	}
+	
 	
 	
 	@RequestMapping(value = "/vaiAlCarrello", method = RequestMethod.GET)

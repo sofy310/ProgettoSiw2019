@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/stile.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
+    <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
+    </script>	
+
+<title>Fotografia</title>
+<body>
+		<div class = "ingrandimento">
+			<img src = "${fotografia.url}" th:src="@{${fotografia.url}}"/>
+		</div>
+	
+</body>
+</html>

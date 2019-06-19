@@ -17,14 +17,13 @@
 		<h4>Queste sono le foto di questo Album</h4>
 		<div>
 		<ul>
-			<li th:each = "fotografia : ${album.fotografie}">
+			<span th:each = "fotografia : ${album.fotografie}">
 		
-				<span th:text = "${fotografia.nome}">NomeFotografia</span>
-				<div class = "immagine">
-					<img src = "${fotografia.url}" th:src="@{${fotografia.url}}"/>;
-				</div>
+				<a class = "immagine" th:href = "@{'/ingrandimento/'+${fotografia.id}}">
+				<img src = "${fotografia.url}" th:src="@{${fotografia.url}}"
+					th:title = "${fotografia.nome}"/></a>
 				
-			</li>
+			</span>
 		</ul>
 		</div>
 	</div>
