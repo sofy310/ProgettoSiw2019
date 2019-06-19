@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -47,6 +48,34 @@ public class ClienteController {
 		else {
 			return "richiestaForm";
 		}
+	}
+	
+	@RequestMapping(value = "/richiesteRicevute", method = RequestMethod.GET)
+	public String richiesteRicevute(Model model) {
+		if(this.clienteService.tutti().isEmpty()) {
+			model.addAttribute("messaggio", "Non ci sono richieste");
+			return "richieste";
+		}
+		else {
+			model.addAttribute("clienti", this.clienteService.tutti());
+			return "richieste";
+		}
+
+	}
+	
+	
+	@RequestMapping(value = "/cliente/{id}")
+	public String paginaFotografia(@PathVariable("id") Long id, Model model) {
+		if(id!=null) {
+			Cliente cliente = this.clienteService.clientePerId(id);
+			model.addAttribute("cliente", cliente);
+			return "richiesta";
+		}
+		else {
+			model.addAttribute("clienti", this.clienteService.tutti());
+			return "richieste";
+		}
+
 	}
 	
 	

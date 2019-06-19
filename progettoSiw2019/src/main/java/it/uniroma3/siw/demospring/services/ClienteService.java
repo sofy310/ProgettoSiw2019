@@ -25,4 +25,9 @@ public class ClienteService {
 	public List<Cliente> tutti(){
 		return (List<Cliente>)this.clienteRepository.findAll();
 	}
+	
+	@Transactional
+	public Cliente clientePerId(Long id) {
+		return this.clienteRepository.findById(id).get();
+	}
 }

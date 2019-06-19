@@ -1,0 +1,34 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/stile.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
+    <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
+    </script>
+    
+<body>
+<h1>Clienti che hanno effettuato una richiesta</h1>
+<div>
+<span th:text = "${messaggio}">Messaggio</span>
+
+
+<ul>
+	<li th:each = "cliente : ${clienti}">
+		<div class = "clienti">
+
+		<a th:href = "@{'/cliente' + '/' + ${cliente.id}}" 
+		th:text = "${cliente.nome}">NomeFotografo</a>
+		
+		<a th:href = "@{'cliente' + '/' + ${cliente.id}}" 
+		th:text = "${cliente.cognome}">CognomeFotografo</a>
+		</div>
+	</li>
+</ul>
+</div>
+
+		<div class = linkHomepage>
+			<a th:href="@{/}"
+			th:text="Homepage">Homepage</a>
+		</div>
+</body>
+</html>
