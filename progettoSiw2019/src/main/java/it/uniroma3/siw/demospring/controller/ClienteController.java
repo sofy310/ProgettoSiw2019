@@ -68,6 +68,7 @@ public class ClienteController {
 	public String paginaFotografia(@PathVariable("id") Long id, Model model) {
 		if(id!=null) {
 			Cliente cliente = this.clienteService.clientePerId(id);
+			model.addAttribute("fotografieCarrello", this.carrelloService.tutte());
 			model.addAttribute("cliente", cliente);
 			return "richiesta";
 		}
