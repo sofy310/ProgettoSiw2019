@@ -10,14 +10,31 @@
     </script>
     
 	</head>
-	<body><h1> Benvenuto alla SILPH SPA</h1>
 	
+
+   
+	<body><h1>SILPH SPA</h1>
+
 	<div class="links"><div>
-			<a th:href="@{/getGalleria}">GalleriaFoto</a>
-			<a th:href="@{/getFotografi}">Fotografi</a>
-			<a th:href="@{/getAlbum}">Album</a>
+			<a th:href="@{/getGalleria}">
+			<img src = "/images/galleriaFoto.jpg"
+			th:src="@{/images/galleriaFoto.jpg}"/></a>
+			<a th:href="@{/getFotografi}">			
+			<img src = "/images/fotografi.jpg"
+			th:src="@{/images/fotografi.jpg}"/></a>
+			<a th:href="@{/getAlbum}">			
+			<img src = "/images/album.jpg"
+			th:src="@{/images/album.jpg}"/></a>
 			<a th:href="@{/login}">LoginFunzionario</a>
 		</div>
 	</div>
+	
+			   
+	<div class = "benvenuto">
+	<center>
+	<img src = "/images/Benvenuto.jpg" th:src="@{/images/Benvenuto.jpg}"/>
+	</center>
+	</div>
+	
 	</body>
 </html>
