@@ -30,12 +30,10 @@
 	<div class = "immagine">
 	<h3>Fotografie Richieste:</h3>
 		<ul>
-			<li th:each = "fotografiaCarrello : ${fotografieCarrello}">
-			<span th:text = ${fotografiaCarrello.nome}>NomeFotografia</span>
-			<div class = "immagineSelezionata">
-				<img src = "${fotografiaCarrello.url}" th:src="@{${fotografiaCarrello.url}}"/>;
-			</div>
-			</li>
+			<span class = "immagine" th:each = "fotografiaCarrello : ${fotografieCarrello}">
+				<img src = "${fotografiaCarrello.url}" th:src="@{${fotografiaCarrello.url}}"
+				th:title = "${fotografiaCarrello.nome}"/>
+			</span>
 		</ul>
 	</div>
 			<div class = linkHomepage>

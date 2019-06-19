@@ -26,10 +26,12 @@
 	</div>
 	</div>
 
-	<div class = "immagine">
-	<img src = "${fotografia.url}" th:src="@{${fotografia.url}}"/>
+	<div>
+	<a class = "immagine" th:href = "@{'/ingrandimento/'+${fotografia.id}}">
+	<img src = "${fotografia.url}" th:src="@{${fotografia.url}}"
+		th:title = "${fotografia.nome}"/></a>
 	</div>
-	
+			
 	<div class = "selezionaFotografia">
 		<a th:href = "@{'/addFotografiaNelCarrello/'+${fotografia.id}}">
 			<button type="button">Aggiungi al Carrello</button></a>
