@@ -22,7 +22,10 @@
 				<span th:text = "${fotografiaCarrello.nome}">NomeFotografia</span>
 				
 				<span class = "prezzo" th:text = "${fotografiaCarrello.prezzo}">PrezzoFotografia</span>
-				<button type="button">Rimuovi dal Carrello</button>
+				
+					<a th:href="@{'/rimuoviFotografia/' + $ {fotografiaCarrello.id}}">
+				<button type="button" th:text="Remove">Rimuovi</button>
+			</a>
 			</li>
 		</div>
 		</ul>

@@ -27,4 +27,19 @@ public class CarrelloService {
 		return(List<FotografiaCarrello>)this.carrelloRepository.findAll();
 	}
 	
+	@Transactional
+	public void rimuoviFotografia(FotografiaCarrello fotografia) {
+		List <FotografiaCarrello> fotografie = this.tutte();
+		if (fotografie.contains(fotografia)) {
+			fotografie.remove(fotografia);
+		}else {
+			System.out.println("Fotografia non trovata");	
+		}
+	}
+	
+	@Transactional
+	public FotografiaCarrello findById(Long id) {
+		return this.carrelloRepository.findById(id).get();
+	}
+	
 }
