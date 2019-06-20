@@ -133,9 +133,10 @@ public class FotografiaController {
 		return "selezionaAlbum";
 	}
 	
-	@RequestMapping("/addFotografia")
-	public String addFotografia(Model model) {
-		model.addAttribute("fotografia", new Fotografia());
+	@RequestMapping(value = "/addFotografia")
+	public String addFotografia(Model model, Album albumSelezionato) {
+		Fotografia fotografia = new Fotografia();
+		model.addAttribute("fotografia", fotografia);
 		return "fotografiaForm";
 	}
 	
@@ -144,6 +145,8 @@ public class FotografiaController {
 			Model model, BindingResult bindingResult) {
 		this.fotografiaValidator.validate(fotografia, bindingResult);
 		if(!bindingResult.hasErrors()) {
+
+
 			this.fotografiaService.inserisci(fotografia);
 			model.addAttribute("fotografie", this.fotografiaService.tutte());
 			return "fotografiaAggiunta";
@@ -154,15 +157,20 @@ public class FotografiaController {
 	}
 
 	@RequestMapping(value = "/albumSelezionato/{id}", method = RequestMethod.GET)
-	public String selezionaAlbum(@PathVariable("id") Long id, Model model) {
+	public String selezionaAlbum(@PathVariable("id") Long id, Model model, 
+			Fotografia fotografia) {
 		if(id!=null) {
 			Album albumSelezionato =  this.albumService.albumPerId(id);
 			albumSelezionato.setId(this.albumService.albumPerId(id).getId());
+			
+			fotografia.setAlbum(albumSelezionato);
+			fotografia.setFotografo(albumSelezionato.getFotografo());
+			
 			model.addAttribute("albumSelezionato", albumSelezionato);
 			return "albumSelezionato";
 		}
 		else {
-			model.addAttribute("fotografi", this.albumService.tutti());
+			model.addAttribute("listaAlbum", this.albumService.tutti());
 			return "selezionaAlbum";
 		}
 
