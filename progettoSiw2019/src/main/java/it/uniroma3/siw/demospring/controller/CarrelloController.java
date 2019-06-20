@@ -25,7 +25,7 @@ public class CarrelloController {
 			}
 			else
 				model.addAttribute("fotografieCarrello", this.carrelloService.tutte());
-				return "carrello";
+				return "redirect:/vaiAlCarrello";
 		}
 		else
 			model.addAttribute("fotografieCarrello", this.carrelloService.tutte());
