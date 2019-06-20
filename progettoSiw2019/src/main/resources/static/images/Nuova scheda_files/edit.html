@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- saved from url=(0221)chrome-search://most-visited/edit.html?addTitle=Aggiungi%20scorciatoia&editTitle=Modifica%20scorciatoia&nameField=Nome&urlField=URL&linkRemove=Rimuovi&linkCancel=Annulla&linkDone=Fine&invalidUrl=Digita%20un%20URL%20valido -->
+<html><!-- Copyright 2018 The Chromium Authors. All rights reserved.
+     Use of this source code is governed by a BSD-style license that can be
+     found in the LICENSE file. --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!--<base target="_top">--><base href="." target="_top">
+  
+  <link rel="stylesheet" type="text/css" href="chrome-search://most-visited/animations.css">
+  <link rel="stylesheet" type="text/css" href="chrome-search://most-visited/constants.css">
+  <link rel="stylesheet" type="text/css" href="chrome-search://most-visited/edit.css">
+  <script src="chrome-search://most-visited/utils.js"></script>
+  <script src="chrome-search://most-visited/animations.js"></script>
+  <script src="chrome-search://most-visited/edit.js"></script>
+<title>Modifica scorciatoia</title></head>
+<body>
+  <dialog id="edit-link-dialog" open="">
+    <div id="dialog-title">Aggiungi scorciatoia</div>
+    <form id="edit-form" action="chrome-search://most-visited/edit.html?addTitle=Aggiungi%20scorciatoia&amp;editTitle=Modifica%20scorciatoia&amp;nameField=Nome&amp;urlField=URL&amp;linkRemove=Rimuovi&amp;linkCancel=Annulla&amp;linkDone=Fine&amp;invalidUrl=Digita%20un%20URL%20valido">
+      <div id="title" class="field-container">
+        <label id="title-field-name" class="field-title" aria-label="Nome">Nome</label>
+        <div class="input-container">
+          <input id="title-field" class="field-input" type="text" autocomplete="off" tabindex="0">
+          <div class="underline"></div>
+        </div>
+      </div>
+      <div id="url" class="field-container">
+        <label id="url-field-name" class="field-title" aria-label="URL">URL</label>
+        <div class="input-container">
+          <input id="url-field" class="field-input" type="text" autocomplete="off" spellcheck="false" dir="ltr" tabindex="0" required="">
+          <div class="underline"></div>
+        </div>
+        <div id="invalid-url" class="error-msg">Digita un URL valido</div>
+      </div>
+      <div class="buttons-container">
+        <span>
+          <button id="delete" class="paper secondary ripple" type="button" tabindex="0" title="Rimuovi">Rimuovi</button>
+        </span>
+        <span>
+          <button id="cancel" class="paper secondary ripple" type="button" tabindex="0" title="Annulla" aria-label="Annulla">Annulla</button>
+          <button type="submit" id="done" class="paper primary ripple" tabindex="0" title="Fine">Fine</button>
+        </span>
+      </div>
+    </form>
+  </dialog>
+
+
+</body></html>
