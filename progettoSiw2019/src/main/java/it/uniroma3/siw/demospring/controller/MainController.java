@@ -44,7 +44,7 @@ public class MainController {
 		return "fotografi";
 	}
 	
-	@RequestMapping(value="getAlbum")
+	@RequestMapping(value="/getAlbum")
 	public String getAlbum (Model model) {
 		model.addAttribute("listaAlbum", this.albumService.tutti());
 		return "listaAlbum";
