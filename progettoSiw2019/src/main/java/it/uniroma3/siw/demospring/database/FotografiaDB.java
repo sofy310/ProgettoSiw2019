@@ -46,6 +46,11 @@ public class FotografiaDB implements ApplicationRunner{
 		String u9 = "/images/galleria/foto9.jpg";
 		String u10 = "/images/galleria/foto10.jpg";
 		String u11= "/images/galleria/foto11.jpg";
+		String u12= "/images/galleria/foto12.jpg";
+		String u13= "/images/galleria/foto13.jpg";
+		String u14= "/images/galleria/foto14.jpg";
+		String u15= "/images/galleria/foto15.jpg";
+
 
 		Fotografo p= new Fotografo("Francesco", "Bianchi", 1980);
 		this.fotografoRepository.save(p);
@@ -93,13 +98,21 @@ public class FotografiaDB implements ApplicationRunner{
 				+ "dove le cascate rappresentate sono parte di un affluente di destra"
 				+ "del fiume Tevere.", 
 				"22€", u4);		
-		Fotografia f5 = new Fotografia("Fotografia Barcellona", "piazza bla bla bla", "5€", u5);
-		Fotografia f6 = new Fotografia("Fotografia Zaanse Schans", "mulini", "15€", u6);
-		Fotografia f7 = new Fotografia("Fotografia Amsterdam", "castello bla bla", "30€", u7);
-		Fotografia f8 = new Fotografia("Fotografia Barcellona", "piazza bla bla", "30€", u8);
-		Fotografia f9 = new Fotografia("Fotografia Helsinki", "piazza bla bla", "30€", u9);
-		Fotografia f10 = new Fotografia("Fotografia Suomelinna", "piazza bla bla", "30€", u10);
-		Fotografia f11 = new Fotografia("Fotografia Napapijri", "piazza bla bla", "30€", u11);
+		Fotografia f5 = new Fotografia("Barcellona", "piazza bla bla bla", "5€", u5);
+		Fotografia f6 = new Fotografia("Zaanse Schans", "mulini", "15€", u6);
+		Fotografia f7 = new Fotografia("Amsterdam", "castello bla bla", "30€", u7);
+		Fotografia f8 = new Fotografia("Barcellona", "piazza bla bla", "15€", u8);
+		Fotografia f9 = new Fotografia("Helsinki", "piazza bla bla", "19€", u9);
+		Fotografia f10 = new Fotografia("Suomelinna", "piazza bla bla", "20€", u10);
+		Fotografia f11 = new Fotografia("Napapijri", "piazza bla bla", "34€", u11);
+		Fotografia f12 = new Fotografia("Colosseo",
+				"Questa fotografia è stata scattata la notte di San Patrizio"
+				+ "in cui il Colosseo è stato illuminato di verde.", "19€", u12);
+		Fotografia f13 = new Fotografia("Folgarida", 
+				"Questa fotografia è stata scattata sulle piste di Folgarida.", "13€", u13);
+		Fotografia f14 = new Fotografia("Cane Lupo", 
+				"Questa Fotografia è stata scattata a Folgarida.", "25€", u14);
+		Fotografia f15 = new Fotografia("Edimburgo", "collina bla bla", "24€", u15);
 
 		f1.setAlbum(a1);
 		f2.setAlbum(a1);
@@ -112,6 +125,10 @@ public class FotografiaDB implements ApplicationRunner{
 		f9.setAlbum(a1);
 		f10.setAlbum(a1);
 		f11.setAlbum(a1);
+		f12.setAlbum(a3);
+		f13.setAlbum(a3);
+		f14.setAlbum(a3);
+		f15.setAlbum(a2);
 
 		
 		f1.setFotografo(f1.getAlbum().getFotografo());
@@ -125,6 +142,10 @@ public class FotografiaDB implements ApplicationRunner{
 		f9.setFotografo(f9.getAlbum().getFotografo());
 		f10.setFotografo(f10.getAlbum().getFotografo());
 		f11.setFotografo(f11.getAlbum().getFotografo());
+		f12.setFotografo(f12.getAlbum().getFotografo());
+		f13.setFotografo(f13.getAlbum().getFotografo());
+		f14.setFotografo(f14.getAlbum().getFotografo());
+		f15.setFotografo(f15.getAlbum().getFotografo());
 
 
 
@@ -139,6 +160,10 @@ public class FotografiaDB implements ApplicationRunner{
 		this.fotografiaRepository.save(f9);
 		this.fotografiaRepository.save(f10);
 		this.fotografiaRepository.save(f11);
+		this.fotografiaRepository.save(f12);
+		this.fotografiaRepository.save(f13);
+		this.fotografiaRepository.save(f14);
+		this.fotografiaRepository.save(f15);
 		
 	}	
 	
