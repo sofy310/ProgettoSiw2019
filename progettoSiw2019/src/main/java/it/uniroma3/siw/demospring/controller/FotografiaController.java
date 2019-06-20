@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import it.uniroma3.siw.demospring.model.Album;
 import it.uniroma3.siw.demospring.model.Fotografia;
 import it.uniroma3.siw.demospring.model.FotografiaCarrello;
+import it.uniroma3.siw.demospring.services.AlbumService;
 import it.uniroma3.siw.demospring.services.CarrelloService;
 import it.uniroma3.siw.demospring.services.FotografiaService;
 import it.uniroma3.siw.demospring.validator.FotografiaValidator;
@@ -26,6 +27,9 @@ public class FotografiaController {
 
 	@Autowired
 	FotografiaService fotografiaService;
+	
+	@Autowired
+	AlbumService albumService;
 	
 	@Autowired
 	CarrelloService carrelloService;
@@ -123,4 +127,44 @@ public class FotografiaController {
 
 		}
 
+	@RequestMapping("/selezionaAlbum")
+	public String selezionaFotografo(Model model) {
+		model.addAttribute("listaAlbum", this.albumService.tutti());
+		return "selezionaAlbum";
+	}
+	
+	@RequestMapping("/addFotografia")
+	public String addFotografia(Model model) {
+		model.addAttribute("fotografia", new Fotografia());
+		return "fotografiaForm";
+	}
+	
+	@RequestMapping(value = "/fotografia", method = RequestMethod.POST)
+	public String newFotografia(@Valid@ModelAttribute Fotografia fotografia,
+			Model model, BindingResult bindingResult) {
+		this.fotografiaValidator.validate(fotografia, bindingResult);
+		if(!bindingResult.hasErrors()) {
+			this.fotografiaService.inserisci(fotografia);
+			model.addAttribute("fotografie", this.fotografiaService.tutte());
+			return "fotografiaAggiunta";
+		}
+		else {
+			return "fotografiaForm";
+		}
+	}
+
+	@RequestMapping(value = "/albumSelezionato/{id}", method = RequestMethod.GET)
+	public String selezionaAlbum(@PathVariable("id") Long id, Model model) {
+		if(id!=null) {
+			Album albumSelezionato =  this.albumService.albumPerId(id);
+			albumSelezionato.setId(this.albumService.albumPerId(id).getId());
+			model.addAttribute("albumSelezionato", albumSelezionato);
+			return "albumSelezionato";
+		}
+		else {
+			model.addAttribute("fotografi", this.albumService.tutti());
+			return "selezionaAlbum";
+		}
+
+	}
 }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/fotografo.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
+<body>
+<form th:action = "@{/fotografia}" method = "POST" th:object = "${fotografia}">
+
+	<h2>Seleziona l'Album di questa Fotografia</h2>
+	<ul>
+		<li th:each = "album : ${listaAlbum}">
+			<div class = "listaAlbum">
+	
+			<a th:href = "@{'/albumSelezionato' + '/' + ${album.id}}" 
+			th:text = "${album.nome}">NomeAlbum</a>
+
+			</div>
+		</li>		
+	</ul>
+	<table>
+
+	</table>
+</form>
+</body>
+</html>
