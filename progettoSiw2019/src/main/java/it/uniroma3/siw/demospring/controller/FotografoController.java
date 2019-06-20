@@ -1,5 +1,8 @@
 package it.uniroma3.siw.demospring.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +48,13 @@ public class FotografoController {
 		}
 	}
 	
+	@RequestMapping("/cercaFotografo")
+	public String cercaFotografo(Model model) {
+		model.addAttribute("fotografo", new Fotografo());
+		return "cercaFotografoPerNome";
+		
+	}
+	
 	@RequestMapping(value = "/fotografo/{id}", method = RequestMethod.GET)
 	public String getFotografo(@PathVariable("id") Long id, Model model) {
 		if(id!=null) {
@@ -56,5 +66,31 @@ public class FotografoController {
 			return "fotografi.html";
 		}
 	}
+	
+	@RequestMapping(value = "/fotografoPerNome", method = RequestMethod.POST)
+	public String fotografoPerNome(@Valid @ModelAttribute Fotografo fotografo, 
+			Model model, BindingResult bindingResult) {
+		this.fotografoValidator.validate(fotografo, bindingResult);
+		List<Fotografo> fotografi = new ArrayList<>();
+
+			for (Fotografo f : this.fotografoService.tutti()) {
+				if(fotografo.getNome().equals(f.getNome())) {
+					fotografi.add(f);
+				}
+			}
+			
+			if (fotografi.isEmpty()) {
+				model.addAttribute("messaggio", "Non sono presenti Fotografi con "
+						+ "questo nome.");
+				return "cercaFotografoPerNome";
+			}
+			else {
+				model.addAttribute("fotografi", fotografi);
+				return "fotografi";				
+			}
+
+		}
+
+	
 	
 }

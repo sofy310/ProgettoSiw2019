@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/fotografo.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
+
+<body>
+<form th:action = "@{/fotografoPerNome}" method = "POST" th:object = "${fotografo}">
+	<h1>Inserisci il NOME del Fotografo</h1>
+	<span th:text = "${messaggio}">Non ci sono fotografi con questo nome</span>
+	<table>
+		<tr>
+			<td>Nome: </td>
+			<td><input type = "text" th:field = "*{nome}"/></td>
+			<td th:if="${#fields.hasErrors('nome')}" 
+			th:errors="*{nome}"></td>		
+		</tr>
+		
+		<tr>
+			<td><button type = "submit">Cerca</button></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>
