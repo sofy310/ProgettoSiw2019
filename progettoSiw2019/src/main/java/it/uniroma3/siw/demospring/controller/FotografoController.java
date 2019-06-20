@@ -48,12 +48,7 @@ public class FotografoController {
 		}
 	}
 	
-	@RequestMapping("/cercaFotografo")
-	public String cercaFotografo(Model model) {
-		model.addAttribute("fotografo", new Fotografo());
-		return "cercaFotografoPerNome";
-		
-	}
+
 	
 	@RequestMapping(value = "/fotografo/{id}", method = RequestMethod.GET)
 	public String getFotografo(@PathVariable("id") Long id, Model model) {
@@ -65,6 +60,13 @@ public class FotografoController {
 			model.addAttribute("fotografi", this.fotografoService.tutti());
 			return "fotografi.html";
 		}
+	}
+	
+	@RequestMapping("/cercaFotografo")
+	public String cercaFotografo(Model model) {
+		model.addAttribute("fotografo", new Fotografo());
+		return "cercaFotografoPerNome";
+		
 	}
 	
 	@RequestMapping(value = "/fotografoPerNome", method = RequestMethod.POST)

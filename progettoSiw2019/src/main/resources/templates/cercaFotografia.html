@@ -6,9 +6,9 @@
     <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
 
 <body>
-<form th:action = "@{/fotografoPerNome}" method = "POST" th:object = "${fotografo}">
-	<h1>Inserisci il NOME del Fotografo</h1>
-	<span th:text = "${messaggio}">Non ci sono fotografi con questo nome</span>
+<form th:action = "@{/fotografiaPerNome}" method = "POST" th:object = "${fotografia}">
+	<h1>Inserisci il NOME della Fotografia</h1>
+	<span th:text = "${messaggio}">Non ci sono fotografie con questo nome</span>
 	<table>
 		<tr>
 			<td>Nome: </td>

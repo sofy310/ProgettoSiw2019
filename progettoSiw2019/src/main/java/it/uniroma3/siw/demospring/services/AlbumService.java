@@ -30,4 +30,9 @@ public class AlbumService {
 	public Album albumPerId(Long id) {
 		return this.albumRepository.findById(id).get();
 	}
+	
+	@Transactional
+	public List<Album> albumPerNome(String nome){
+		return this.albumRepository.findByNome(nome);
+	}
 }

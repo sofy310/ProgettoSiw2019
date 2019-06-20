@@ -31,4 +31,9 @@ public class FotografiaService {
 		return this.fotografiaRepository.findById(id).get();
 	}
 	
+	@Transactional
+	public List<Fotografia> fotografiaPerNome(String nome){
+		return this.fotografiaRepository.findByNome(nome);
+	}
+	
 }

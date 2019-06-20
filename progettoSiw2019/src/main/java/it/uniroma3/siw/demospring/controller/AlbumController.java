@@ -1,5 +1,8 @@
 package it.uniroma3.siw.demospring.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,5 +85,37 @@ public class AlbumController {
 		}
 
 	}
+	
+	@RequestMapping("/cercaAlbum")
+	public String cercaAlbum(Model model) {
+		model.addAttribute("album", new Album());
+		return "cercaAlbum";
+		
+	}
+	
+	@RequestMapping(value = "/albumPerNome", method = RequestMethod.POST)
+	public String albumPerNome(@Valid @ModelAttribute Album album, 
+			Model model, BindingResult bindingResult) {
+		List<Album> listaAlbum = new ArrayList<>();
+
+			for (Album a : this.albumService.tutti()) {
+				if(album.getNome().equals(a.getNome())) {
+					listaAlbum.add(a);
+				}
+			}
+			
+			if (listaAlbum.isEmpty()) {
+				model.addAttribute("messaggio", "Non sono presenti Album con "
+						+ "questo nome.");
+				return "cercaAlbum";
+			}
+			else {
+				model.addAttribute("listaAlbum", listaAlbum);
+				return "listaAlbum";				
+			}
+
+		}
+
+	
 
 }
