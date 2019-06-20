@@ -20,12 +20,7 @@ public class CarrelloController {
 		
 		if (this.carrelloService.tutte().contains(this.carrelloService.findById(id))) {
 			this.carrelloService.rimuoviFotografia(this.carrelloService.findById(id));
-			if(this.carrelloService.tutte().isEmpty()) {
-				return "redirect:/vaiAlCarrello";
-			}
-			else
-				model.addAttribute("fotografieCarrello", this.carrelloService.tutte());
-				return "redirect:/vaiAlCarrello";
+			return "redirect:/vaiAlCarrello";
 		}
 		else
 			model.addAttribute("fotografieCarrello", this.carrelloService.tutte());
